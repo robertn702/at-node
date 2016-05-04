@@ -1,4 +1,4 @@
-# node-at
+# at-node
 A cancellable scheduled function that runs once.
 
 ## Installation
