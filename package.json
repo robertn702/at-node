@@ -8,8 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/robertn702/node-at"
+    "url": "https://github.com/robertn702/at-node"
   },
   "author": "Robert Niimi <robertn702@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
