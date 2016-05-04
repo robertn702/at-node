@@ -1,10 +1,14 @@
 {
   "name": "at-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "schedule a cancellable function to run once",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robertn702/node-at"
   },
   "author": "Robert Niimi <robertn702@gmail.com>",
   "license": "ISC"
