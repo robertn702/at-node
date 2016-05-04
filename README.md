@@ -3,12 +3,12 @@ A cancellable scheduled function that runs once.
 
 ## Installation
 ```
-$ npm i --save node-at
+$ npm i --save at-node
 ```
 
 ## Usage
 ```
-const at = require('node-at');
+const at = require('at-node');
 
 const sayHi = () => {
   console.log('hi');
