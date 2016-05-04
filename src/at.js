@@ -1,6 +1,6 @@
 const at = (time, cb) => {
   let later;
-  if (!time instanceof Date) {
+  if (!(time instanceof Date)) {
     let timestamp = Date.parse(time);
     if (!isNaN(timestamp)) {
       later = new Date(time);

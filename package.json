@@ -4,7 +4,7 @@
   "description": "schedule a cancellable function to run once",
   "main": "src/at.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/robertn702/at-node/issues"
+  },
+  "devDependencies": {
+    "expect": "^1.19.0",
+    "mocha": "^2.4.5"
   }
 }
