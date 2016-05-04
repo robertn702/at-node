@@ -1,6 +1,6 @@
 {
   "name": "at-node",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "schedule a cancellable function to run once",
   "main": "src/at.js",
   "scripts": {
