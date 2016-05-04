@@ -1,7 +1,7 @@
 'use strict';
 
-const at = require('../src/at');
-const expect = require('expect');
+var at = require('../src/at');
+var expect = require('expect');
 
 describe('at', function() {
   it('should be a function', function() {
@@ -9,27 +9,37 @@ describe('at', function() {
   });
 
   it('should return a function with valid inputs', function() {
-    const cancelFunction = at('January 1, 2020', function() {});
+    var cancelFunction = at('January 1, 2020', function() {});
     expect(typeof cancelFunction).toBe('function');
   });
 
   it('should return undefined if the later date has already passed', function() {
-    const cancelFunction = at('January 1, 1999', function() {});
+    var cancelFunction = at('January 1, 1999', function() {});
     expect(cancelFunction).toBe(undefined);
   });
 
+  it('should throw an error if date is invalid', function() {
+    var spy = expect.createSpy();
+    try {
+      var cancelFunction = at('asdf', function() {});
+    } catch (err) {
+      spy();
+    }
+    expect(spy).toHaveBeenCalled();
+  });
+
   it('should return immediately execute the function if the later date has already passed', function() {
-    const laterFunction = expect.createSpy();
-    const cancelFunction = at('January 1, 1999', laterFunction);
+    var laterFunction = expect.createSpy();
+    var cancelFunction = at('January 1, 1999', laterFunction);
     expect(laterFunction).toHaveBeenCalled();
   });
 
   it('should call the callback function at the specified time', function(done) {
-    const laterFunction = expect.createSpy();
-    const now = new Date();
-    const timeOffset = 25; // current time + 1 second in the future
-    const laterTime = new Date(now.getTime() + timeOffset);
-    const cancelFunction = at(laterTime, laterFunction);
+    var laterFunction = expect.createSpy();
+    var now = new Date();
+    var timeOffset = 25; // current time + timeOffset seconds in the future
+    var laterTime = new Date(now.getTime() + timeOffset);
+    var cancelFunction = at(laterTime, laterFunction);
     expect(laterFunction).toNotHaveBeenCalled();
     setTimeout(function() {
       expect(laterFunction).toHaveBeenCalled();
@@ -38,11 +48,11 @@ describe('at', function() {
   });
 
   it('should successfully cancel the function', function(done) {
-    const laterFunction = expect.createSpy();
-    const now = new Date();
-    const timeOffset = 25; // current time + 1 second in the future
-    const laterTime = new Date(now.getTime() + timeOffset);
-    const cancelFunction = at(laterTime, laterFunction);
+    var laterFunction = expect.createSpy();
+    var now = new Date();
+    var timeOffset = 25; // current time + 1 second in the future
+    var laterTime = new Date(now.getTime() + timeOffset);
+    var cancelFunction = at(laterTime, laterFunction);
     cancelFunction();
     setTimeout(function() {
       expect(laterFunction).toNotHaveBeenCalled();
