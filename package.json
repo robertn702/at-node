@@ -10,6 +10,14 @@
     "type": "git",
     "url": "https://github.com/robertn702/at-node"
   },
+  "keywords": [
+    "at",
+    "schedule",
+    "later"
+  ],
   "author": "Robert Niimi <robertn702@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertn702/at-node/issues"
+  }
 }
