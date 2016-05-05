@@ -12,8 +12,12 @@
   },
   "keywords": [
     "at",
+    "job",
+    "later",
+    "node-at",
+    "run-at",
     "schedule",
-    "later"
+    "timer"
   ],
   "author": "Robert Niimi <robertn702@gmail.com>",
   "license": "MIT",
