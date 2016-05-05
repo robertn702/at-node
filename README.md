@@ -1,21 +1,27 @@
-# at-node
-schedule a cancellable function to run once
+# At
+A cancellable, scheduled function for node
 
-# Installation
+## Installation
 ```bash
 npm i --save at-node
 ```
 
-# Usage
+## Usage
 ```javascript
 const at = require('at-node');
 
-// schedule function to be run at a specified datetime 
-// and bind cancelation function to variable
-const cancelHi = at('January 1, 2020', () => {
-  console.log('hi');
-});
+// schedule a function by passing in a date or a datestring
+at(new Date('10/10/2018'), cb);
+at('10/10/2018', cb);
 
-// cancel the scheduled function
-cancelHi();
+// a function is returned that cancels the scheduled function
+const cancelCb = at('January 1, 2018', cb);
+
+// change your mind?
+cancelCb();
+```
+
+## Testing
+```bash
+npm test
 ```
