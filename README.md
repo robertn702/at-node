@@ -3,11 +3,11 @@ schedule a cancellable function to run once
 
 # Installation
 ```
-$ npm i --save at-node
+npm i --save at-node
 ```
 
 # Usage
-```
+```javascript
 const at = require('at-node');
 
 # schedule function to be run at a specified datetime and bind cancelation function to variable
