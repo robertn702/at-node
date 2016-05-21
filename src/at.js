@@ -1,5 +1,5 @@
 function at(time, cb) {
-  var later;
+  var later = time;
   if (!(time instanceof Date)) {
     var timestamp = Date.parse(time);
     if (!isNaN(timestamp)) {
@@ -7,8 +7,6 @@ function at(time, cb) {
     } else {
       throw new Error('[at] "time" must be parseable date/time');
     }
-  } else {
-    later = time;
   }
 
   var now = new Date();
